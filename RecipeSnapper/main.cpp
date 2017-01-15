@@ -7,14 +7,9 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    ImageAnalyser imageAnalyser;
+    QQmlApplicationEngine engine;
+    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
-    imageAnalyser.ReadImage();
-
-    //QQmlApplicationEngine engine;
-    //engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
-
-    //return app.exec();
-    return 0;
+    return app.exec();
 }
 

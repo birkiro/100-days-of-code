@@ -1,4 +1,4 @@
-import QtQuick 2.3
+import QtQuick 2.0
 import QtQuick.Controls 1.2
 
 ApplicationWindow {
@@ -7,23 +7,18 @@ ApplicationWindow {
     height: 480
     title: qsTr("Hello World")
 
-    menuBar: MenuBar {
-        Menu {
-            title: qsTr("File")
-            MenuItem {
-                text: qsTr("&Open")
-                onTriggered: console.log("Open action triggered");
-            }
-            MenuItem {
-                text: qsTr("Exit")
-                onTriggered: Qt.quit();
-            }
-        }
-    }
+    Rectangle {
+        id: page
+        width: 320; height: 480
+        color: "lightgray"
 
-    Flickable {
-        id: flickable1
-        anchors.fill: parent
+        Text {
+            id: helloText
+            text: "Hello world!"
+            y: 30
+            anchors.horizontalCenter: page.horizontalCenter
+            font.pointSize: 24; font.bold: true
+        }
     }
 }
 
